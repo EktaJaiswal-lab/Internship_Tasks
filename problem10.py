@@ -1,0 +1,16 @@
+# Problem: Find a String
+# HackerRank: https://www.hackerrank.com/challenges/find-a-string/problem
+def count_substring(string, sub_string):
+    count = 0
+
+    for i in range(0, len(string) - len(sub_string) + 1, 1):
+        if string[i] == sub_string[0]:
+            for j in range(0, len(sub_string), 1):
+                if string[i + j] == sub_string[j]:
+                    continue
+                else:
+                    break
+            else:
+                count += 1
+
+    return count
